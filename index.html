@@ -28,15 +28,18 @@
     }
     .label{
         float:left;
-        width:12.5%;
+        width:11%;
         height:20px;
         text-align: right
     }
 
     .bar{
         float:left;
-        width:12.5%;
+        width:11%;
         height:50px;
+    }
+    .bar_4, .label_4{
+        width:23%;
     }
     #select_wrap{
         margin-top:200px 0 0 0;
@@ -70,6 +73,7 @@
             for (i = 1; i < stage + 1; i++){
 
                 $('.bar_'+i.toString()).css('background-color', '#32CD32');
+                $('.bar_d_'+i.toString()).css('background-color', '#32CD32');
             };
 
             $(".submit").on("click",function(){
@@ -80,7 +84,7 @@
                 $('.bar').css('background-color','white');
                 $('.bar_d').css('background-color','white');
                 for (i = 1; i < stage + 1; i++){
-
+                    $('.bar_d_'+i.toString()).css('background-color', '#32CD32');
                     $('.bar_'+i.toString()).css('background-color', '#32CD32');
                 };
             });
@@ -97,7 +101,7 @@
         <div class="label">1</div>
         <div class="label">2</div>
         <div class="label">3</div>
-        <div class="label">4</div>
+        <div class="label label_4">4</div>
         <div class="label">5</div>
         <div class="label">6</div>
         <div class="label">7</div>
@@ -132,14 +136,14 @@
     <h2>Marking Schedule Stages:</h2>
 
     <ul>
-        <li class="bar_d bar_1">1. We check to make sure all essays expected have been uploaded and follow up any missing scripts.</li>
-        <li class="bar_d bar_2">2. We generally read through all the essays to gain a view on the general standard of the cohort and any issues with particular questions.</li>
-        <li class="bar_d bar_3">3. The process of detailed marking then begins and involves judging each script according to the standard published criteria at your level of study; correcting any key errors; and making comments on the strengths and weaknesses of your script. A first mark is awarded.  This stage of the process can take between 30 and 60 minutes per script.</li>
-        <li class="bar_d bar_4">4. We generally read through the scripts again to make sure that we have applied judgements about standards consistently.</li>
-        <li class="bar_d bar_5">5. We then submit the essays for moderation by an independent examiner who undertakes to read through the essays and check for consistency of marking and marking against the published standards.</li>
-        <li class="bar_d bar_6">6. The first marker and the moderating examiner then discuss the essays and the marks and fine tune the marking work that has been undertaken so far where appropriate.</li>
-        <li class="bar_d bar_7">7. When all the marks are finally agreed, the first marker amends the feedback comments made following discussion with the moderator where appropriate.</li>
-        <li class="bar_d bar_8">8. Finally, the essays are made available back to you.</li>
+        <li class="bar_d bar_d_1">1. We check to make sure all essays expected have been uploaded and follow up any missing scripts.</li>
+        <li class="bar_d bar_d_2">2. We generally read through all the essays to gain a view on the general standard of the cohort and any issues with particular questions.</li>
+        <li class="bar_d bar_d_3">3. The process of detailed marking then begins and involves judging each script according to the standard published criteria at your level of study; correcting any key errors; and making comments on the strengths and weaknesses of your script. A first mark is awarded.  This stage of the process can take between 30 and 60 minutes per script.</li>
+        <li class="bar_d bar_d_4">4. We generally read through the scripts again to make sure that we have applied judgements about standards consistently.</li>
+        <li class="bar_d bar_d_5">5. We then submit the essays for moderation by an independent examiner who undertakes to read through the essays and check for consistency of marking and marking against the published standards.</li>
+        <li class="bar_d bar_d_6">6. The first marker and the moderating examiner then discuss the essays and the marks and fine tune the marking work that has been undertaken so far where appropriate.</li>
+        <li class="bar_d bar_d_7">7. When all the marks are finally agreed, the first marker amends the feedback comments made following discussion with the moderator where appropriate.</li>
+        <li class="bar_d bar_d_8">8. Finally, the essays are made available back to you.</li>
     </ul>
 
 
