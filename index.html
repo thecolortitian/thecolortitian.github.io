@@ -39,12 +39,26 @@
         height:50px;
     }
     #select_wrap{
-        margin-top:300px;
+        margin-top:200px 0 0 0;
+        padding-bottom:200px;
     }
     </style>
 
     <script>
         $(document).ready(function(){
+
+            var current = window.location.href;
+
+            if(current.substr(current.length-4) == 'edit'){
+                $("#select_wrap").css("visibility","visible");
+                $("html, body").animate({
+                    scrollTop: $("#select_wrap").offset().top
+                }, 2000);
+            }
+
+            else{
+                $("#select_wrap").css("visibility","hidden");
+            }
 
             var stage = localStorage.getItem('stage');
             $(".stage").val(stage);
@@ -77,7 +91,7 @@
 
 <body>
 
-    <h1>Progress Bar - Assignment 1 Marking Schedule</h1>
+    <h1>Progress Bar - WEBS2001 Assignment 1 Marking</h1>
 
     <div id="label_wrap">
         <div class="label">1</div>
@@ -131,15 +145,17 @@
 
     <div id="select_wrap">
 
+        <h2>Update Marking Status:</h2>
+
         <select class="stage">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
+            <option value="1">1 - Check for missing scripts</option>
+            <option value="2">2 - General read</option>
+            <option value="3">3 - Detailed marking</option>
+            <option value="4">4 - Re-read</option>
+            <option value="5">5 - Moderation</option>
+            <option value="6">6 - Discussion between markers</option>
+            <option value="7">7 - Amendments</option>
+            <option value="8">8 - Essays returned</option>
         </select>
 
         <button class="submit">Update</button>
