@@ -1,10 +1,14 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style>
-    #label_wrap, ol{
-        width:80%;
+    body{
+        font-family: 'Roboto', sans-serif;
         margin:0 auto;
+        width:80%;
+    }
+    #label_wrap, ol{
         overflow:hidden;
         clear:both;
     }
@@ -17,11 +21,10 @@
         margin:5px 0 10px 0;
     }
     #wrap{
-        width:80%;
-        margin:0 auto;
         overflow:hidden;
         border:thin solid gray;
         clear:both;
+        margin-bottom:80px;
     }
     .label{
         float:left;
@@ -34,6 +37,9 @@
         float:left;
         width:12.5%;
         height:50px;
+    }
+    #select_wrap{
+        margin-top:300px;
     }
     </style>
 
@@ -49,7 +55,7 @@
                 
             for (i = 1; i < stage + 1; i++){
 
-                $('.bar_'+i.toString()).css('background-color', 'green');
+                $('.bar_'+i.toString()).css('background-color', '#32CD32');
             };
 
             $(".submit").on("click",function(){
@@ -61,16 +67,18 @@
                 $('.bar_d').css('background-color','white');
                 for (i = 1; i < stage + 1; i++){
 
-                    $('.bar_'+i.toString()).css('background-color', 'green');
+                    $('.bar_'+i.toString()).css('background-color', '#32CD32');
                 };
             });
-
 
         });
     </script>
 </head>
 
 <body>
+
+    <h1>Progress Bar - Assignment 1 Marking Schedule</h1>
+
     <div id="label_wrap">
         <div class="label">1</div>
         <div class="label">2</div>
@@ -107,6 +115,8 @@
 
     </div>
 
+    <h2>Marking Schedule Stages:</h2>
+
     <ul>
         <li class="bar_d bar_1">1. We check to make sure all essays expected have been uploaded and follow up any missing scripts.</li>
         <li class="bar_d bar_2">2. We generally read through all the essays to gain a view on the general standard of the cohort and any issues with particular questions.</li>
@@ -119,20 +129,22 @@
     </ul>
 
 
+    <div id="select_wrap">
 
+        <select class="stage">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
 
-    <select class="stage">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-    </select>
+        <button class="submit">Update</button>
 
-    <button class="submit">Update</button>
+    </div>
 
 </body>
 
