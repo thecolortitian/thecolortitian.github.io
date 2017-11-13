@@ -1,0 +1,139 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+    #label_wrap, ol{
+        width:80%;
+        margin:0 auto;
+        overflow:hidden;
+        clear:both;
+    }
+    ul{
+        line-height: 1.5em;
+        list-style-type: none;
+    }
+    ul li{
+        padding:10px 10px 10px 10px;
+        margin:5px 0 10px 0;
+    }
+    #wrap{
+        width:80%;
+        margin:0 auto;
+        overflow:hidden;
+        border:thin solid gray;
+        clear:both;
+    }
+    .label{
+        float:left;
+        width:12.5%;
+        height:20px;
+        text-align: right
+    }
+
+    .bar{
+        float:left;
+        width:12.5%;
+        height:50px;
+    }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+
+            var stage = localStorage.getItem('stage');
+            $(".stage").val(stage);
+            stage = parseInt(stage);
+
+            $('.bar').css('background-color','white');
+            $('.bar_d').css('background-color','white');
+                
+            for (i = 1; i < stage + 1; i++){
+
+                $('.bar_'+i.toString()).css('background-color', 'green');
+            };
+
+            $(".submit").on("click",function(){
+                var stage = parseInt($(".stage").find(":selected").val());
+                alert(stage);
+                localStorage.setItem('stage',stage);
+
+                $('.bar').css('background-color','white');
+                $('.bar_d').css('background-color','white');
+                for (i = 1; i < stage + 1; i++){
+
+                    $('.bar_'+i.toString()).css('background-color', 'green');
+                };
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="label_wrap">
+        <div class="label">1</div>
+        <div class="label">2</div>
+        <div class="label">3</div>
+        <div class="label">4</div>
+        <div class="label">5</div>
+        <div class="label">6</div>
+        <div class="label">7</div>
+        <div class="label">8</div>
+
+    </div>
+
+    <div id="marker_wrap">
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+    </div>
+
+    <div id="wrap">
+    
+        <div class="bar bar_1"></div>
+        <div class="bar bar_2"></div>
+        <div class="bar bar_3"></div>
+        <div class="bar bar_4"></div>
+        <div class="bar bar_5"></div>
+        <div class="bar bar_6"></div>
+        <div class="bar bar_7"></div>
+        <div class="bar bar_8"></div>
+
+    </div>
+
+    <ul>
+        <li class="bar_d bar_1">1. We check to make sure all essays expected have been uploaded and follow up any missing scripts.</li>
+        <li class="bar_d bar_2">2. We generally read through all the essays to gain a view on the general standard of the cohort and any issues with particular questions.</li>
+        <li class="bar_d bar_3">3. The process of detailed marking then begins and involves judging each script according to the standard published criteria at your level of study; correcting any key errors; and making comments on the strengths and weaknesses of your script. A first mark is awarded.  This stage of the process can take between 30 and 60 minutes per script.</li>
+        <li class="bar_d bar_4">4. We generally read through the scripts again to make sure that we have applied judgements about standards consistently.</li>
+        <li class="bar_d bar_5">5. We then submit the essays for moderation by an independent examiner who undertakes to read through the essays and check for consistency of marking and marking against the published standards.</li>
+        <li class="bar_d bar_6">6. The first marker and the moderating examiner then discuss the essays and the marks and fine tune the marking work that has been undertaken so far where appropriate.</li>
+        <li class="bar_d bar_7">7. When all the marks are finally agreed, the first marker amends the feedback comments made following discussion with the moderator where appropriate.</li>
+        <li class="bar_d bar_8">8. Finally, the essays are made available back to you.</li>
+    </ul>
+
+
+
+
+    <select class="stage">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select>
+
+    <button class="submit">Update</button>
+
+</body>
+
+</html>
